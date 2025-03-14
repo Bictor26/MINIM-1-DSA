@@ -70,11 +70,8 @@ public class ProductManagerTest {
 
     @Test
     public void testOrdersByUser() {
-        pm.addUser("1", "Toni", "381112838");
-        Order o = new Order("381112838");
-        o.addLP(2, "C1");
-        pm.addOrder(o);
-        pm.deliverOrder();
+        testSales();
+        pm.addUser("1", "Toni", "381112838" );
         User u = pm.getUser("381112838");
         List<Order> l = u.orders();
         Assert.assertEquals(1, l.size());
