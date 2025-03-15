@@ -22,7 +22,6 @@ public class ProductManagerImpl implements ProductManager {
 
     @Override
     public void addProduct(String id, String name, double price) {
-
         productList.add(new Product(id, name, price));
     }
 

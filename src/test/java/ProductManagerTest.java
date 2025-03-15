@@ -18,6 +18,8 @@ public class ProductManagerTest {
         pm.addProduct("C2", "Coca-cola", 2.5);
         pm.addProduct("B1", "Lomo queso", 3);
         pm.addProduct("B2", "bacon queso", 3.5);
+
+        pm.addUser("1", "Toni", "381112838");
     }
 
     @After
@@ -39,7 +41,6 @@ public class ProductManagerTest {
     @Test
     public void testAddOrder() {
         Assert.assertEquals(0, pm.numOrders());
-        pm.addUser("1", "Toni", "381112838");
         Order o = new Order("381112838");
         o.addLP(2, "C1"); //, "coca-cola");
         o.addLP(1, "bocata de pernil");
@@ -71,7 +72,6 @@ public class ProductManagerTest {
     @Test
     public void testOrdersByUser() {
         testSales();
-        pm.addUser("1", "Toni", "381112838" );
         User u = pm.getUser("381112838");
         List<Order> l = u.orders();
         Assert.assertEquals(1, l.size());

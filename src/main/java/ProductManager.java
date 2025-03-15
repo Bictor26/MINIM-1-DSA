@@ -21,5 +21,5 @@ public interface ProductManager {
 
     User getUser(String number);
 
-    void addUser(String id, String name, String dni);
+    public void addUser(String id, String name, String dni);
 }
